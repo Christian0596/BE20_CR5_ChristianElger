@@ -41,7 +41,7 @@ if (isset($_SESSION["user"])) {
                 <h1>Congratulations! You've helped give an animal a happy life!</h1>
             </body>
         </html>";
-    header("refresh:4;url=/BE20_CR5_animal_adoption_ChristianElger/home.php");
+    header("refresh:4;url=/home.php");
 
     exit();
 
