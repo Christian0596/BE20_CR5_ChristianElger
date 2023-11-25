@@ -52,11 +52,11 @@ mysqli_close($conn);
 </head>
 <body>
 <?php require_once 'components/navbar.php' ?>
-    <div class="background-container">
+    <div class="container bg-info text-white">
         <div class="container p-4">
             <form action="" method="post" enctype='multipart/form-data'>
                 <div class="row">
-                    <h1 class="center-text">Add a file</h1>
+                    <h1 class="center-text">Update:</h1>
                     <div class="col-md-6 offset-md-3 text-center">
                         <input type="text" name="name" placeholder="Write a pet name" class="form-control mb-3" value="<?= $row["name"]; ?>">
                         <input type="text" name="location" placeholder="Where is the Adress?" class="form-control mb-3"value="<?= $row["location"]; ?>">

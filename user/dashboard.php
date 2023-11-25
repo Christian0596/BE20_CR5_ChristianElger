@@ -19,7 +19,7 @@
                     <th scope='row'>$row[user_id]</th>
                     <td>$row[email]</td>
                     <td><img src='{$row['picture']}' alt='User Image' style='width: 50px; height: 50px; border-radius: 50%;'></td>
-                    <td><a href='/php/BE20_CR5_ChristianElger/user/update.php?id=$row[user_id]' class='btn btn-warning'>Update</a></td>
+                    <td><a href='BE20_CR5_ChristianElger/user/update.php?id=$row[user_id]' class='btn btn-warning'>Update</a></td>
                 </tr>
             ";
         }

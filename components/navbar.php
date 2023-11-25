@@ -8,7 +8,7 @@
             </button>
             <div class='collapse navbar-collapse' id='navbarSupportedContent'>
                 <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
-                    <li class='nav-item'>
+                    <li class='nav-item border border-warning-subtle'>
                         <a class='nav-link active' aria-current='page' href='/BE20_CR5_animal_adoption_ChristianElger/home.php'>Pet-Home</a>
                     </li>";
 

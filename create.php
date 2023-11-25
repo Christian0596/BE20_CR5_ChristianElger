@@ -53,7 +53,7 @@ mysqli_close($conn);
 </head>
 <body>
     <?php require_once 'components/navbar.php' ?>
-    <div class="background-container">
+    <div class="background-container bg-info text-white">
         <div class="container p-4">
             <form action="" method="post" enctype='multipart/form-data'>
                 <div class="row">

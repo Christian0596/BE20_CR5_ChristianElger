@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 24. Nov 2023 um 23:08
+-- Erstellungszeit: 25. Nov 2023 um 11:30
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -53,12 +53,12 @@ INSERT INTO `animal` (`animal_id`, `name`, `photo`, `location`, `description`, `
 (4, 'Mittens', 'https://www.thesprucepets.com/thmb/4H4K_nta-Zvv4yJgndStugkeqtg=/2782x0/filters:no_upscale():strip_icc()/calico-cats-profile-554694-hero-c7ba9806ce1f4fb1b4d4edc2fd820a0d.jpg', 'Vienna', 'Adventurous and playful', 'Small', 4, 1, 'Calico', 'available'),
 (5, 'Rocky', 'https://upload.wikimedia.org/wikipedia/commons/d/d0/German_Shepherd_-_DSC_0346_%2810096362833%29.jpg', 'Vienna', 'Energetic and friendly', 'Large', 9, 1, 'German Shepherd', 'not available'),
 (7, 'Max', 'https://upload.wikimedia.org/wikipedia/commons/9/93/Golden_Retriever_Carlos_%2810581910556%29.jpg', 'Vienna', 'Affectionate and gentle', 'Large', 9, 1, 'Golden Retriever', 'coming soon'),
-(8, 'Cleo', NULL, 'Vienna', 'Graceful and elegant', 'Small', 10, 1, 'Siamese', 'Center'),
-(12, 'Fluffy', 'fluffy.jpg', 'Shelter A', 'A fluffy cat looking for a home.', 'Medium', 3, 1, 'Domestic Shorthair', 'Available'),
-(13, 'Buddy', 'buddy.jpg', 'Shelter B', 'Friendly dog with a big heart.', 'Large', 2, 1, 'Golden Retriever', 'Available'),
-(14, 'Whiskers', 'whiskers.jpg', 'Shelter C', 'Playful kitten ready for adoption.', 'Small', 1, 1, 'Siamese', 'Available'),
-(15, 'Max', 'max.jpg', 'Shelter A', 'Loyal and well-behaved dog.', 'Medium', 4, 1, 'German Shepherd', 'Available'),
-(16, 'Mittens', 'mittens.jpg', 'Shelter B', 'Adorable kitten with unique markings.', 'Small', 1, 1, 'Calico', 'Available');
+(8, 'Cleo', 'https://mamaginger.nl/wp-content/uploads/2021/02/download-e1613119689503-1140x889.png', 'Vienna', 'Graceful and elegant', 'Small', 10, 1, 'Siamese', 'Available'),
+(12, 'Fluffy', 'https://upload.wikimedia.org/wikipedia/commons/0/0c/American_Shorthair.jpg', 'Graz', 'A fluffy cat looking for a home.', 'Medium', 3, 1, 'Domestic Shorthair', 'Available'),
+(13, 'Buddy', 'https://www.santevet.de/uploads/images/de_DE/rassen/goldenretriever.jpeg', 'Vienna', 'Friendly dog with a big heart.', 'Large', 2, 1, 'Golden Retriever', 'Available'),
+(14, 'Whiskers', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8y99lgetWTq5N3KuCIuxXTfRFEW-mm6vQnw&usqp=CAU', 'Graz', 'Playful kitten ready for adoption.', 'Small', 1, 1, 'Siamese', 'Available'),
+(15, 'Max', 'https://www.vidavetcare.com/wp-content/uploads/sites/234/2022/04/german-shepherd-dog-breed-info.jpeg', 'Vienna', 'Loyal and well-behaved dog.', 'Medium', 4, 1, 'German Shepherd', 'Available'),
+(16, 'Mittens', 'https://catastic.pet/wp-content/uploads/2022/11/closeup-adorable-calico-cat-outdoors-during-daylight.jpg', 'Vienna', 'Adorable kitten with unique markings.', 'Small', 1, 1, 'Calico', 'Available');
 
 -- --------------------------------------------------------
 
@@ -81,12 +81,7 @@ INSERT INTO `pet_adoption` (`adoption_id`, `user_number`, `pet_number`, `adoptio
 (1, 2, 7, '2023-11-24'),
 (2, 2, 2, '2023-11-24'),
 (3, 2, 4, '2023-11-24'),
-(4, 2, 2, '2023-11-24'),
-(5, 2, 2, '2023-11-24'),
-(6, 2, 1, '2023-11-24'),
-(7, 2, 2, '2023-11-24'),
-(8, 2, 2, '2023-11-24'),
-(9, 2, 1, '2023-11-24');
+(11, 2, 13, '2023-11-25');
 
 -- --------------------------------------------------------
 
@@ -111,8 +106,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `phone_number`, `address`, `password`, `picture`, `status`) VALUES
-(1, 'Christian', 'Elger', 'c.r.e@outlook.at', '0660', 'wien', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'https://img.freepik.com/vektoren-kostenlos/laechelnder-kaukasischer-junge-mit-hut_1308-146805.jpg', 'adm'),
-(2, 'richard', 'Elger', 'christian.elger@outlook.com', '0660', 'wien', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'https://images.tagseoblog.de/bilder/bild-foto/bild.jpg', 'user');
+(2, 'richard', 'Elger', 'christian.elger@outlook.com', '0660', 'wien', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'https://images.tagseoblog.de/bilder/bild-foto/bild.jpg', 'user'),
+(3, 'Christian', 'Elger', 'hello@hello.at', '0767', 'wien', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '6561ba4064320.jpg', 'user'),
+(4, 'adm', 'hello', 'adm@hello.at', '010101010101111', 'wien', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'avatar.png', 'adm');
 
 --
 -- Indizes der exportierten Tabellen
@@ -152,13 +148,13 @@ ALTER TABLE `animal`
 -- AUTO_INCREMENT für Tabelle `pet_adoption`
 --
 ALTER TABLE `pet_adoption`
-  MODIFY `adoption_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `adoption_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints der exportierten Tabellen

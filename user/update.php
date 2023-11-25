@@ -93,26 +93,32 @@
     <?php require_once '../components/navbar.php' ?>
 
     <div class="container">
-        <img src="<?= $row['picture'] ?>" class="card-img-top" style="height: 15rem" alt=''>
-        <h1>Hello <?= $row['first_name']?></h1>
-        <h2>You are logged with:  <?= $row['email']?></h2>
-        <form action="" method="post" enctype="multipart/form-data">
-            <label>
-                Email:
-                <input type="email" name="email" class="form-control" value="<?= $row["email"]??""; ?>">
-                <span><?= $emailError; ?></span>
-            </label>
-            <label>
-                Password:
-                <input type="password" name="password" class="form-control">
-                <span><?= $passError; ?></span>
-            </label>
-            <label class="form-label">
-                Picture:
-                <input type="file" name="picture" class="form-control">
-            </label>
-            <input type="submit" value="Update" name="update" class="btn btn-primary">
-        </form>
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <img src="<?= $row['picture'] ?>" class="card-img-top img-fluid" alt='Profile Picture'>
+            </div>
+            <div class="col-md-8">
+                <h1>Hello <?= $row['first_name']?>!</h1>
+                <h2>You are logged in as: <?= $row['email']?></h2>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <label>
+                        Email:
+                        <input type="email" name="email" class="form-control" value="<?= $row["email"]??""; ?>">
+                        <span><?= $emailError; ?></span>
+                    </label>
+                    <label>
+                        Password:
+                        <input type="password" name="password" class="form-control">
+                        <span><?= $passError; ?></span>
+                    </label>
+                    <label class="form-label">
+                        Picture:
+                        <input type="file" name="picture" class="form-control">
+                    </label>
+                    <input type="submit" value="Update" name="update" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

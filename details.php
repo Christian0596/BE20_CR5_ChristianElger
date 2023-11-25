@@ -2,6 +2,8 @@
 session_start();
 require_once 'components/db_connect.php';
 
+$card = '';
+
 if (isset($_GET['prodID']) && is_numeric($_GET['prodID'])) {
     $animalId = $_GET['prodID'];
 
@@ -15,28 +17,33 @@ if (isset($_GET['prodID']) && is_numeric($_GET['prodID'])) {
 
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                $card = "
-                <div class='p-4'>
-                    <div class='card w-175'>
-                        <img src='{$row['photo']}' class='card-img-top' style='height: 12rem' alt=''>
+                $card .= "
+                <div class='detail-card'>
+                    <div>
+                        <img src='{$row['photo']}' id='zoomImage'>
                         <div class='card-body'>
-                            <h5 class='card-title'>{$row['name']}</h5>
+                            <h5 class='text-center'>{$row['name']}</h5>
                             <hr>
-                            <p class='card-text'> {$row['location']}</p>
-                            <p class='card-text'> Vaccinated: {$row['vaccinated']}</p>
-                            <p class='card-text'> Size: {$row['size']}</p>
-                            <p class='card-text'> {$row['description']}</p>
-                            <p class='card-text'> Age: {$row['age']}</p>
-                            <p class='card-text'> Breed: {$row['breed']}</p>
-                            <p class='card-text'> Status: {$row['position']}</p>
+                            <p> {$row['location']}</p>
+                            <p> Vaccinated: {$row['vaccinated']}</p>
+                            <p> Size: {$row['size']}</p>
+                            <p> {$row['description']}</p>
+                            <p> Age: {$row['age']}</p>
+                            <p> Breed: {$row['breed']}</p>
+                            <p> Status: {$row['position']}</p>";
+
+                if (isset($_SESSION['user']) || isset($_SESSION['adm'])) {
+                    $card .= "
                             <form action='pet_adoption.php' method='post'>
                                 <input type='hidden' name='adopt_me' value='{$row['animal_id']}'>
-                                <button type='submit' class='btn btn-outline-primary'>Take me home</button>
-                            </form>
+                                <button type='submit' class='btn btn-outline-primary w-100'>Take me home</button>
+                            </form>";
+                }
+
+                $card .= "
                         </div>
                     </div>
-                </div>
-                ";
+                </div>";
             }
         } else {
             $card = "No data found.";
@@ -60,15 +67,21 @@ mysqli_close($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="background">
     <?php require_once 'components/navbar.php' ?>
-    <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 p-4">
+    <div class="container text-white">
+        
             <?= $card; ?>
-        </div>
+       
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('zoomImage').addEventListener('click', function () {
+            this.style.transform = 'scale(1.5)';
+        });
+    </script>
 </body>
 </html>

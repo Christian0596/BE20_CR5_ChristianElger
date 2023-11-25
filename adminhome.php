@@ -23,8 +23,8 @@ if(mysqli_num_rows($result) > 0){
             <p class='card-text'> Age: $row[age]</p>
             <p class='card-text'> Bread: $row[breed]</p>
             <p class='card-text'> Status: $row[position]</p>
-            <a href='cardupdate.php?prodID=$row[animal_id]' class='btn btn-outline-dark'>Update</a>
-            <a href='delete.php?prodID=$row[animal_id]' class='btn btn-outline-dark'>Delete</a>
+            <a href='cardupdate.php?prodID=$row[animal_id]' class='btn btn-outline-warning w-100'>Update</a>
+            <a href='delete.php?prodID=$row[animal_id]' class='btn btn-outline-danger w-100'>Delete</a>
           </div>
           </div>
           </div>
@@ -46,10 +46,11 @@ if(mysqli_num_rows($result) > 0){
     <title>Home</title>
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<body>
+<link rel="stylesheet" href="style.css">
+</head>
   
 <?php require_once 'components/navbar.php' ?>
-<div class="container">
+<div class="background">
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
             <?= $cards; ?>
         </div>
