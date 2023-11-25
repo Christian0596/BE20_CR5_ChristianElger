@@ -85,7 +85,7 @@ if (isset($_SESSION["user"])) {
 
     mysqli_free_result($result);
 } else {
-    header("Location: /login.php");
+    header("Location: /home.php");
     die();
 }
 

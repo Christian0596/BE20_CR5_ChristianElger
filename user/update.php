@@ -45,7 +45,7 @@
         }
         elseif(strlen($pass) < 3){
             $error = true;
-            $passError = "Password must be at least 8 chars long.";
+            $passError = "Password must be at least 3 chars long.";
         }
 
 
