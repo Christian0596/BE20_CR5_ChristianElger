@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_SESSION["user"]) && !isset($_SESSION["adm"])){
-        header("Location: home.php");
+        header("Location: ../home.php");
         die();
     }
 

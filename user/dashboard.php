@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_SESSION["adm"])){
-        header("Location: home.php");
+        header("Location: ../home.php");
     }
 
     require_once '../components/db_connect.php';
@@ -18,7 +18,7 @@
                 <tr>
                     <th scope='row'>$row[user_id]</th>
                     <td>$row[email]</td>
-                    <td><img src='{$row['picture']}' alt='User Image' style='width: 50px; height: 50px; border-radius: 50%;'></td>
+                    <td><img src='../assets/{$row['picture']}' alt='User Image' style='width: 50px; height: 50px; border-radius: 50%;'></td>
                     <td><a href='BE20_CR5_ChristianElger/user/update.php?id=$row[user_id]' class='btn btn-warning'>Update</a></td>
                 </tr>
             ";

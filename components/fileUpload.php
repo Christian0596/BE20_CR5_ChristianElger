@@ -4,8 +4,8 @@ function fileUpload($picture, $source = "user") {
     $uploadDirectory = "../assets/";
 
     if (!isset($picture) || $picture["error"] == 4) {
-        $pictureName = "avatar.png";
-        if ($source == "image") {
+        $pictureName = "https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331256_1280.png";
+        if ($source == "https://cdn.pixabay.com/photo/2017/11/10/05/46/group-2935521_1280.png") {
             $pictureName = "product.png";
         }
         $message = "No picture has been chosen, but you can upload an image later :)";
